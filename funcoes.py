@@ -20,7 +20,7 @@ def mostrar_ultima_conta():
 
 
 def mostrar_contas():
-    '''Mostra todas as contas cadastradas'''
+    '''Mostra todas as contas cadastradas no banco de dados'''
     conexao = sqlite3.connect(BD)  # sempre preciso criar conexao com o banco
     sql = "SELECT * FROM contas"
     cursor = conexao.cursor()  # pego os codigos roda no bd

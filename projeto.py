@@ -56,6 +56,14 @@ while True:
     elif opcao == 7:
         mostrar_contas()
     elif opcao == 8:
+        data_inicial = input("Digite a data inicial:")
+        data_final = input("Digite a data final:")
+        relatorio_pagar(data_inicial, data_final)
+    elif opcao == 9:
+        data_inicial = input("Digite a data inicial:")
+        data_final = input("Digite a data final:")
+        relatorio_receber(data_inicial, data_final)
+    elif opcao == 0:
         print('Adeus e obrigado por usar nosso programa.')
         break
     else:

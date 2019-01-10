@@ -26,7 +26,7 @@ def mostrar_contas():
     cursor = conexao.cursor()
     cursor.execute(sql)
     contas = cursor.fetchall()
-    if contas.__len__() > 0:
+    if contas:
         print('Todas as suas contas:')
         for conta in contas:
             print('Codigo da conta:', conta[0], ' - Data:', conta[1], ' - Descricao:', conta[2], ' - Valor:', conta[3],
@@ -166,6 +166,8 @@ def excluir_conta(cod_conta):
             print("Nao foi possivel deletar a conta")
     cursor.close()
     conexao.close()
+
+
 def relatorio_pagar(data_inicial, data_final):
     '''Mostra todas as contas a pagar cadastradas'''
     conexao = sqlite3.connect(BD)
@@ -184,6 +186,8 @@ def relatorio_pagar(data_inicial, data_final):
         print("Nenhuma conta cadastrado!")
     cursor.close()
     conexao.close()
+
+
 def relatorio_receber(data_inicial, data_final):
     '''Mostra todas as contas a receber cadastradas'''
     conexao = sqlite3.connect(BD)

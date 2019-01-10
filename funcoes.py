@@ -175,7 +175,7 @@ def relatorio_pagar(data_inicial, data_final):
     cursor = conexao.cursor()
     cursor.execute(sql)
     contas = cursor.fetchall()
-    if contas.__len__() > 0:
+    if contas:
         print('Suas contas neste período:')
         for conta in contas:
             print('Codigo da conta:', conta[0], ' - Data:', conta[1], ' - Descricao:', conta[2], ' - Valor:', conta[3],
@@ -195,7 +195,7 @@ def relatorio_receber(data_inicial, data_final):
     cursor = conexao.cursor()
     cursor.execute(sql)
     contas = cursor.fetchall()
-    if contas.__len__() > 0:
+    if contas:
         print('Suas contas neste período:')
         for conta in contas:
             print('Codigo da conta:', conta[0], ' - Data:', conta[1], ' - Descricao:', conta[2], ' - Valor:', conta[3],
